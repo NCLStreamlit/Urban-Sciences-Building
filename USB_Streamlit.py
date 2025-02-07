@@ -84,7 +84,7 @@ def send_request(Id, start_date, end_date, r_flag = False):
     print(start_date, end_date)
     for _ in range(3): 
         try:
-            request = urllib.request.urlopen(call_var, timeout=5).read().decode('utf-8')
+            request = urllib.request.urlopen(call_var).read().decode('utf-8')
             response = json.loads(request)['historic']['values']
             
             return response
